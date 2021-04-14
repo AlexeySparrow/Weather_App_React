@@ -1,0 +1,98 @@
+@import "../../variables";
+
+.container {
+  @include size(100%, auto);
+  margin-top: 1rem;
+
+  ul {
+    @include size(100%, auto);
+    @include flex(row, space-between, stretch, wrap);
+
+    li {
+      @include size(48%, auto);
+      @include flex(column, space-between, center, nowrap);
+      background: $colorBackgroundDifferentElements;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+      border-radius: 0.5rem;
+      margin-top: 1rem;
+      padding: 1.2rem;
+
+      p {
+        &:nth-child(2) {
+          font-weight: 900;
+          font-size: 64px;
+          margin-top: 1rem;
+        }
+
+        span {
+          font-weight: normal;
+          font-size: 36px;
+        }
+      }
+    }
+  }
+}
+
+.windIndicator {
+  @include flex(row, center, center, nowrap);
+  margin-top: 0.4rem;
+
+  img {
+    margin-right: 0.5rem;
+  }
+}
+
+.humidity {
+  @include size(100%, auto);
+
+  p {
+    font-size: 0.5rem !important;
+    font-weight: 400 !important;
+    margin-top: 1rem;
+  }
+
+  div:nth-child(1) {
+    @include flex(row, space-between, center, nowrap);
+  }
+
+  div:nth-child(2) {
+    @include size(100%, 0.5rem);
+    border: 1px solid $colorBorderAndTextGrey;
+    box-shadow: 0 1px 2px 2px $colorBorderAndTextGrey inset;
+    border-radius: 1rem;
+    position: relative;
+    overflow: hidden;
+
+    span {
+      height: 100%;
+      background: $colorToggleDarkModeAndLineHumidity;
+      border-radius: 1rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+.pressure {
+  font-size: 1rem !important;
+}
+
+/* ---------- dark theme ---------- */
+
+.darkTheme li {
+  background: $colorBackgroundDifferentElements_DARK !important;
+}
+
+/* --------- media ---------- */
+
+@media (max-width: 1018px) {
+  .container {
+    ul {
+      li {
+        width: 100%;
+      }
+    }
+  }
+}
+

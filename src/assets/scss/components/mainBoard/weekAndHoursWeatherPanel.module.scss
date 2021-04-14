@@ -1,0 +1,141 @@
+@import "../../variables";
+
+.container {
+  @include size(100%, auto);
+}
+
+.title {
+  @include flex(row, flex-start, flex-end, wrap);
+
+  h1 {
+    margin-right: 1.5rem;
+  }
+
+  ul {
+    display: flex;
+    font-weight: bold;
+    color: $colorBorderAndTextGrey;
+
+    li {
+      cursor: pointer;
+
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+  }
+}
+
+.tabActive {
+  color: $colorText;
+  border-bottom: 3px solid $colorText;
+}
+
+.cards {
+  @include size(100%, auto);
+  @include flex(row, center, center, wrap);
+  position: relative;
+  margin-top: 1rem;
+
+  button {
+    @include size(2rem, 2rem);
+    @include flex(row, center, center, nowrap);
+    position: absolute;
+    top: 50%;
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+
+    &:nth-child(1) {
+      transform: rotate(180deg) translateY(50%);
+      left: 0;
+    }
+
+    &:nth-child(2) {
+      transform: translateY(-50%);
+      right: 0;
+    }
+  }
+
+  ul {
+    @include size(85%, auto);
+    @include flex(row, space-between, center, nowrap);
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      height: 0;
+    }
+
+    li {
+      @include flex(column, center, center, nowrap);
+      height: 145px;
+      background: $colorBackgroundDifferentElements;
+      box-shadow: 0 7px 12px rgba(0, 0, 0, 0.05);
+      border-radius: 10px;
+      font-size: 0.7rem;
+      margin: 0 0.5rem;
+
+      div {
+        @include size(80%, auto);
+        @include flex(row, space-around, flex-start, nowrap);
+
+        p:last-child {
+          color: $colorBorderAndTextGrey;
+        }
+      }
+    }
+  }
+}
+
+/* ---------- dark theme ---------- */
+
+.darkTheme {
+  li {
+    background: $colorBackgroundDifferentElements_DARK !important;
+  }
+
+  .title li {
+    background: none !important;
+  }
+
+  .tabActive {
+    color: $colorText_DARK;
+    border-color: $colorText_DARK;
+  }
+}
+
+/* ---------- media ---------- */
+
+@media (max-width: 508px) {
+  .cards {
+    button {
+      &:nth-child(1),
+      &:nth-child(2){
+        display: none;
+      }
+    }
+
+    ul {
+      width: 100%;
+      flex-wrap: wrap;
+
+      li {
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 440px) {
+  .title {
+    h1 {
+      width: 100%;
+      text-align: center;
+    }
+    ul {
+      width: 100%;
+      justify-content: space-around;
+      margin-top: 1rem;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@import "../variables";
+
+.wrapper {
+  @include size(100%, auto);
+  @include flex(row, flex-end, flex-start, wrap);
+  min-height: 100vh;
+  background: $colorBackgroundSite;
+  overflow-x: hidden;
+  color: $colorText;
+}
+
+/* ---------- dark theme ---------- */
+
+.darkTheme {
+    background: $colorBackgroundSite_DARK;
+    color: $colorText_DARK;
+
+  button,
+  input {
+    color: $colorText_DARK;
+  }
+}

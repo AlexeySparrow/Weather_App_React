@@ -1,0 +1,73 @@
+@import "../../variables";
+
+.container {
+  @include size(100%, auto);
+  @include flex(row, space-around, flex-start, wrap);
+  position: relative;
+  padding: 2rem 1rem 1rem 1rem;
+
+  button {
+    margin-right: 0.5rem;
+  }
+}
+
+.toggleDarkMode {
+  @include size(64px, 32px);
+  margin-top: 0.7rem;
+
+  input {
+    display: none;
+
+    &:checked + label:before {
+      left: 35px;
+      z-index: 1;
+    }
+
+    &:checked + label:after {
+      left: 35px;
+      z-index: 0;
+    }
+  }
+
+  label {
+    position: relative;
+    display: block;
+    height: 100%;
+    border: 2px solid $colorBorderAndTextGrey;
+    border-radius: 3rem;
+    overflow: hidden;
+    cursor: pointer;
+
+    &:before,
+    &:after {
+      content: '';
+      @include size(20px, 20px);
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &:before {
+      left: 6px;
+      background: $colorToggleDarkModeAndLineHumidity url("../../../image/moon.png") center center no-repeat;
+      z-index: 0;
+      transition: 0.2s;
+    }
+
+    &:after {
+      left: 6px;
+      background: $colorBorderAndTextGrey;
+      transition: 0.2s;
+      z-index: 1;
+    }
+  }
+}
+
+/* ---------- media ---------- */
+
+@media (max-width: 835px) {
+  .leftPanel__searchCityButton {
+    padding: 0.8rem 1rem;
+  }
+}

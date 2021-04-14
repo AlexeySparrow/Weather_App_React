@@ -1,0 +1,51 @@
+@import "../../variables";
+
+.container {
+  @include size(100%, auto);
+  color: $colorBorderAndTextGrey;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.dataAndCity {
+  margin-top: 3rem;
+
+  div:nth-child(1) {
+    @include flex(row, space-around, center, wrap);
+  }
+
+  div:nth-child(2) {
+    @include flex(row, center, center, wrap);
+    margin-top: 2rem;
+
+    p {
+      margin-left: 0.5rem;
+    }
+  }
+}
+
+/* ---------- media ---------- */
+
+@media (max-width: 1124px) {
+  .dataAndCity {
+    margin-top: 1.5rem;
+
+    div:nth-child(2) {
+      margin-top: 1rem;
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .container {
+    margin-top: 3rem;
+  }
+
+  .dataAndCity {
+    margin-top: 3rem;
+
+    div:nth-child(2) {
+      margin-top: 2rem;
+    }
+  }
+}

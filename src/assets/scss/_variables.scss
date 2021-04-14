@@ -1,0 +1,40 @@
+/* ---------- variables ---------- */
+
+// colors site
+$colorBackgroundSite: #F1F1F1;
+$colorBackgroundDifferentElements: #fff;
+$colorText: #48484A;
+$colorBorderAndTextGrey: #ACACAC;
+$colorToggleDarkModeAndLineHumidity: #EC6E4D;
+
+// dark theme colors
+$colorBackgroundDifferentElements_DARK: #212331;
+$colorBackgroundSite_DARK: #100E1C;
+$colorText_DARK: #E6E6E6;
+
+// fonts site
+$mainFontSite: 'Rubik', sans-serif;
+
+// size elements
+$mainFontSize: 20px;
+
+/* ---------- mixins ---------- */
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin flex($flex-direction, $justify-content, $align-items, $flex-wrap){
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-wrap: $flex-wrap;
+}
+
+@mixin adaptiveFormula ($attribute, $min-size, $max-size) {
+  #{$attribute}: calc(#{$min-size + px} + (#{$max-size} - #{$min-size}) * ((100vw - 320px) / (1500 - 320)));
+}
+
+/* ---------- templates ---------- */

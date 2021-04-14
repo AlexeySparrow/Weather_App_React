@@ -1,0 +1,30 @@
+@import "../../variables";
+
+div.viewBox {
+  @include size(100%, auto);
+  @include flex(column, center, center,nowrap);
+  position: relative;
+  padding: 0.5rem;
+
+  &:after {
+    content: '';
+    @include size(80%, 2px);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: linear-gradient(0.25turn, rgba(0,0,0,0), $colorToggleDarkModeAndLineHumidity, rgba(0,0,0,0));;
+  }
+
+  ul {
+    margin-top: 1rem;
+    text-align: center;
+
+    li {
+      margin-top: 0.5rem;
+      cursor: pointer;
+      text-transform: capitalize;
+    }
+  }
+}

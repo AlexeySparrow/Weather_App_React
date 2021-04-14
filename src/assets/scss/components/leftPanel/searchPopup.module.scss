@@ -1,0 +1,73 @@
+@import "../../variables";
+
+.container {
+  @include size(100%, 100%);
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: -200%;
+  z-index: 10;
+  background: $colorBackgroundDifferentElements;
+  transition: 0.5s;
+
+  p {
+    @include size(100%, auto);
+    margin-top: 1rem;
+    padding: 0 1rem;
+    text-align: center;
+    color: $colorToggleDarkModeAndLineHumidity;
+  }
+
+  &.openPopup {
+    left: 0;
+  }
+
+  div {
+    @include size(100%, auto);
+    @include flex(row, space-around, flex-start, wrap);
+    padding: 0 1rem;
+    margin-top: 5rem;
+
+    span,
+    button {
+      margin-top: 1rem;
+    }
+
+    input {
+      @include size(100%, auto);
+      padding: 0.8rem 0.5rem 0.8rem 2.5rem;
+    }
+
+    span {
+      @include size(100%, auto);
+      position: relative;
+
+      img {
+        position: absolute;
+        top: 50%;
+        left: calc(2.5rem / 2);
+        transform: translateY(-50%) translateX(-30%);
+      }
+    }
+  }
+}
+
+.btnExit {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  border: none;
+  padding: 0.5rem;
+
+  &:active {
+    box-shadow: none;
+  }
+}
+
+/* ---------- dark theme ---------- */
+
+.darkTheme {
+  background: $colorBackgroundDifferentElements_DARK;
+}
+
+

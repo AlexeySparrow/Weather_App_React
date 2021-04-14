@@ -1,0 +1,15 @@
+@import "../variables";
+
+.container {
+  @include size(70%, 100%);
+  @include adaptiveFormula(padding, 20, 40);
+  min-height: 100vh;
+}
+
+/* ---------- media ---------- */
+
+@media (max-width: 850px) {
+  .container {
+    width: 100%;
+  }
+}

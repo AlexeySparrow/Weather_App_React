@@ -1,0 +1,26 @@
+@import "../variables";
+
+.container {
+  @include size(30%, 100%);
+  min-height: 100vh;
+  padding-bottom: 0.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: $colorBackgroundDifferentElements;
+}
+
+/* ---------- dark theme ---------- */
+
+.darkTheme {
+  background: $colorBackgroundDifferentElements_DARK;
+}
+
+/* ---------- media ---------- */
+
+@media (max-width: 850px) {
+  .container {
+    position: relative;
+    width: 100%;
+  }
+}
